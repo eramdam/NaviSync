@@ -117,7 +117,7 @@ def prompt_user_for_lastfm_match(
     print(f"   [0] None of these match (skip this track)")
     
     while True:
-        choice = input(f"\n   → Select match [0-{len(matches)}]: ").strip()
+        choice = input(f"\n   → Select match [0-{len(matches)}]: ").strip() or '1'
         
         if choice == '0':
             return None
