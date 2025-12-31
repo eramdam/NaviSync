@@ -229,8 +229,8 @@ def get_lastfm_match_for_navidrome_track(
         # There are NEW matches! Re-prompt the user
         print(f"\n   ℹ️  New potential matches found for previously skipped track")
 
-    # Auto-accept high-confidence matches (95%+ similarity)
-    if fuzzy_matches[0]['combined_score'] >= 95:
+    # Auto-accept exact matches
+    if fuzzy_matches[0]['combined_score'] == 100:
         best_match = fuzzy_matches[0]
         print(f"\n✓ Auto-matched: {navidrome_artist} - {navidrome_title}")
         print(f"  → {best_match['lastfm_artist']} - {best_match['lastfm_track']} ({best_match['combined_score']:.0f}%)")
