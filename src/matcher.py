@@ -233,7 +233,6 @@ def get_lastfm_match_for_navidrome_track(
     if fuzzy_matches[0]['combined_score'] == 100:
         best_match = fuzzy_matches[0]
         print(f"\n✓ Auto-matched: {navidrome_artist} - {navidrome_title}")
-        print(f"  → {best_match['lastfm_artist']} - {best_match['lastfm_track']} ({best_match['combined_score']:.0f}%)")
         # Save the match for future runs
         cache.save_fuzzy_match(
             navidrome_track,
